@@ -68,20 +68,20 @@ jobs:
     # Build the Docker image
     - name: Build
       run: |-
-        docker build -f ./client/Dockerfile -t "$GAR_LOCATION-docker.pkg.dev/multi-k8s-362511/client:$GITHUB_SHA" . && \
-        docker build -f ./server/Dockerfile -t "$GAR_LOCATION-docker.pkg.dev/multi-k8s-362511/server:$GITHUB_SHA" . && \
-        docker build -f ./worker/Dockerfile -t "$GAR_LOCATION-docker.pkg.dev/multi-k8s-362511/worker:$GITHUB_SHA" . 
+        cd client && docker build -f Dockerfile -t "$GAR_LOCATION-docker.pkg.dev/multi-k8s-362511/client:$GITHUB_SHA" . && cd - && \
+        cd server && docker build -f Dockerfile -t "$GAR_LOCATION-docker.pkg.dev/multi-k8s-362511/server:$GITHUB_SHA" . && cd - &&\
+        cd worker && docker build -f Dockerfile -t "$GAR_LOCATION-docker.pkg.dev/multi-k8s-362511/worker:$GITHUB_SHA" . 
           
         
       
     # Push the Docker image to Google Artifact Registry
     - name: Publish
       run: |-
-        docker push "$GAR_LOCATION-docker.pkg.dev/multi-k8s-362511/client:$GITHUB_SHA" \
-        docker push "$GAR_LOCATION-docker.pkg.dev/multi-k8s-362511/client:$GITHUB_SHA" \ 
-        docker push "$GAR_LOCATION-docker.pkg.dev/multi-k8s-362511/client:$GITHUB_SHA" \
-        docker pull redis \
-        docker pull postgress 
+        docker push "$GAR_LOCATION-docker.pkg.dev/multi-k8s-362511/client:$GITHUB_SHA" && \
+        docker push "$GAR_LOCATION-docker.pkg.dev/multi-k8s-362511/client:$GITHUB_SHA" && \ 
+        docker push "$GAR_LOCATION-docker.pkg.dev/multi-k8s-362511/client:$GITHUB_SHA" 
+     #   docker pull redis  && \
+     #   docker pull postgress 
 
 
 
