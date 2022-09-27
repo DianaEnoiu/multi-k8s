@@ -69,9 +69,9 @@ jobs:
     # Build the Docker image
     - name: Build
       run: |-
-        cd client && docker build -f Dockerfile -t "$GAR_LOCATION-docker.pkg.dev/multi-k8s-362511/client:$GITHUB_SHA" . && cd - && \
-        cd server && docker build -f Dockerfile -t "$GAR_LOCATION-docker.pkg.dev/multi-k8s-362511/server:$GITHUB_SHA" . && cd - &&\
-        cd worker && docker build -f Dockerfile -t "$GAR_LOCATION-docker.pkg.dev/multi-k8s-362511/worker:$GITHUB_SHA" . 
+        cd client && docker build -f Dockerfile -t "$GAR_LOCATION-docker.pkg.dev/multi-k8s-362511/euk8s/client:$GITHUB_SHA" . && cd - && \
+        cd server && docker build -f Dockerfile -t "$GAR_LOCATION-docker.pkg.dev/multi-k8s-362511/euk8s/server:$GITHUB_SHA" . && cd - &&\
+        cd worker && docker build -f Dockerfile -t "$GAR_LOCATION-docker.pkg.dev/multi-k8s-362511/euk8s/worker:$GITHUB_SHA" . 
           
         
       
