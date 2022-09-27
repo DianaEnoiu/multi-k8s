@@ -78,9 +78,9 @@ jobs:
     # Push the Docker image to Google Artifact Registry
     - name: Publish
       run: |-
-        docker push "$GAR_LOCATION-docker.pkg.dev/multi-k8s-362511/client:$GITHUB_SHA" && \
-        docker push "$GAR_LOCATION-docker.pkg.dev/multi-k8s-362511/client:$GITHUB_SHA" && \ 
-        docker push "$GAR_LOCATION-docker.pkg.dev/multi-k8s-362511/client:$GITHUB_SHA" 
+        docker push "$GAR_LOCATION-docker.pkg.dev/multi-k8s-362511/eu8ks/client:$GITHUB_SHA" && \
+        docker push "$GAR_LOCATION-docker.pkg.dev/multi-k8s-362511/eu8ks/client:$GITHUB_SHA" && \ 
+        docker push "$GAR_LOCATION-docker.pkg.dev/multi-k8s-362511/eu8ks/client:$GITHUB_SHA" 
      #   docker pull redis  && \
      #   docker pull postgress 
 
