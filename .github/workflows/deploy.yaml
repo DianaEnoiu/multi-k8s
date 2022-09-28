@@ -70,7 +70,7 @@ jobs:
     - name: Build
       run: |-
         cd client && docker build -f Dockerfile -t "$GAR_LOCATION-docker.pkg.dev/multi-k8s-362511/client:$GITHUB_SHA" . && cd - && \
-        cd server && docker build -f Dockerfile -t "$GAR_LOCATION-docker.pkg.dev/multi-k8s-362511/server:$GITHUB_SHA" . && cd - &&\
+        cd server && docker build -f Dockerfile -t "$GAR_LOCATION-docker.pkg.dev/multi-k8s-362511/server:$GITHUB_SHA" . && cd - && \
         cd worker && docker build -f Dockerfile -t "$GAR_LOCATION-docker.pkg.dev/multi-k8s-362511/worker:$GITHUB_SHA" . && cd -
           
         
@@ -78,9 +78,9 @@ jobs:
     # Push the Docker image to Google Artifact Registry
     - name: Publish
       run: |-
-        docker push "$GAR_LOCATION-docker.pkg.dev/multi-k8s-362511/eu8ks/client:$GITHUB_SHA" && cd - &&\
-        docker push "$GAR_LOCATION-docker.pkg.dev/multi-k8s-362511/eu8ks/server:$GITHUB_SHA" && cd - &&\ 
-        docker push "$GAR_LOCATION-docker.pkg.dev/multi-k8s-362511/eu8ks/worker:$GITHUB_SHA" && cd - 
+        docker push "client:$GITHUB_SHA" && \
+        docker push "server:$GITHUB_SHA" && \ 
+        docker push "worker:$GITHUB_SHA"  
      #   docker pull redis  && \
      #   docker pull postgress 
 
