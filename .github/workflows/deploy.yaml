@@ -81,6 +81,7 @@ jobs:
     # Push the Docker image to Google Artifact Registry
     - name: Publish
       run: |-
+        docker push dianaenoiu/k8s/worker:$GITHUB_SHA && \
         docker push europe-central2-docker.pkg.dev/multi-k8s-362511/euk8s/client:$GITHUB_SHA && \
         docker push europe-central2-docker.pkg.dev/multi-k8s-362511/euk8s/server:$GITHUB_SHA && \ 
         docker push europe-central2-docker.pkg.dev/multi-k8s-362511/euk8s/worker:$GITHUB_SHA && \
