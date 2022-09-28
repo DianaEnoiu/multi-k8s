@@ -69,9 +69,9 @@ jobs:
     # Build the Docker image
     - name: Build
       run: |-
-        cd client && docker build -f Dockerfile -t dianaenoiu/client:latest dianaenoiu/client:$GITHUB_SHA . && cd - && \
-        cd server && docker build -f Dockerfile -t dianaenoiu/server:latest dianaenoiu/server:$GITHUB_SHA . && cd - &&\
-        cd worker && docker build -f Dockerfile -t dianaenoiu/worker:latest dianaenoiu/worker:$GITHUB_SHA . && cd -
+        cd client && docker build -t dianaenoiu/client:latest -t dianaenoiu/client:$GITHUB_SHA -f Dockerfile . && cd - && \
+        cd server && docker build -t dianaenoiu/server:latest -t dianaenoiu/server:$GITHUB_SHA -f Dockerfile . && cd - &&\
+        cd worker && docker build -t dianaenoiu/worker:latest -t dianaenoiu/worker:$GITHUB_SHA -f Dockerfile . && cd -
           
         
       
