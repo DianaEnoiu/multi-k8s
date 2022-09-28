@@ -81,11 +81,11 @@ jobs:
     # Push the Docker image to Google Artifact Registry
     - name: Publish
       run: |-
-        docker push "$GKE_ZONE-docker.pkg.dev/multi-k8s-362511/dianaenoiu/client:$GITHUB_SHA" && \
-        docker push "$GKE_ZONE-docker.pkg.dev/multi-k8s-362511/dianaenoiu/server:$GITHUB_SHA" && \ 
-        docker push "$GKE_ZONE-docker.pkg.dev/multi-k8s-362511/dianaenoiu/worker:$GITHUB_SHA" && \
-        docker pull "$GKE_ZONE-docker.pkg.dev/multi-k8s-362511/dianaenoiu/redis" && \
-        docker pull "$GKE_ZONE-docker.pkg.dev/multi-k8s-362511/dianaenoiu/postgress"
+        docker push $GKE_ZONE-docker.pkg.dev/multi-k8s-362511/dianaenoiu/client:$GITHUB_SHA && \
+        docker push $GKE_ZONE-docker.pkg.dev/multi-k8s-362511/dianaenoiu/server:$GITHUB_SHA && \ 
+        docker push $GKE_ZONE-docker.pkg.dev/multi-k8s-362511/dianaenoiu/worker:$GITHUB_SHA && \
+        docker pull $GKE_ZONE-docker.pkg.dev/multi-k8s-362511/dianaenoiu/redis && \
+        docker pull $GKE_ZONE-docker.pkg.dev/multi-k8s-362511/dianaenoiu/postgress
 
      #   docker pull postgress 
 
