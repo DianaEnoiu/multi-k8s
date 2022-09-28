@@ -72,6 +72,7 @@ jobs:
         cd client && docker build -f Dockerfile -t dianaenoiu/client . && cd - && \
         cd server && docker build -f Dockerfile -t dianaenoiu/server . && cd - && \
         cd worker && docker build -f Dockerfile -t dianaenoiu/worker . && cd - && \
+        docker push dianaenoiu/client && \
         docker tag dianaenoiu/client europe-central2-docker.pkg.dev/multi-k8s-362511/euk8s/client:$GITHUB_SHA && \
         docker tag dianaenoiu/server europe-central2-docker.pkg.dev/multi-k8s-362511/euk8s/server:$GITHUB_SHA && \
         docker tag dianaenoiu/worker europe-central2-docker.pkg.dev/multi-k8s-362511/euk8s/worker:$GITHUB_SHA 
