@@ -83,8 +83,8 @@ jobs:
       run: |-
         echo ${GITHUB_SHA}
         docker push europe-central2-docker.pkg.dev/multi-k8s-362511/euk8s/client:${GITHUB_SHA} && \
-        docker push europe-central2-docker.pkg.dev/multi-k8s-362511/euk8s/server:${GITHUB_SHA} && \ 
-        docker push europe-central2-docker.pkg.dev/multi-k8s-362511/euk8s/worker:${GITHUB_SHA} 
+        docker push europe-central2-docker.pkg.dev/multi-k8s-362511/euk8s/server:${GITHUB_SHA} && \
+        docker push europe-central2-docker.pkg.dev/multi-k8s-362511/euk8s/worker:${GITHUB_SHA}
 
     # Deploy the Docker image to the GKE cluster
     - name: Deploy
