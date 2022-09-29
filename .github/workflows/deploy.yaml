@@ -90,7 +90,7 @@ jobs:
     - name: Deploy
       run: |-
         # replacing the image name in the k8s template
-        kubectl apply -f -
+        kubectl apply -f ./k8s 
         kubectl rollout status deployment/client-deployment
         kubectl rollout status deployment/server-deployment
         kubectl rollout status deployment/worker-deployment
